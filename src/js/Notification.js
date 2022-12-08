@@ -20,7 +20,8 @@ export default class Notification {
     container.innerHTML = "";
   }
 
-  render(type, price) {
+  render({ type, price }) {
+    console.log(type, price);
     price = formatCurrency(price);
     const template = `
 <div class="notification type-${type} ${classNames({
@@ -37,6 +38,5 @@ export default class Notification {
     });
 
     this.notifications.appendChild(this.container);
-    console.log(this.notifications);
   }
 }

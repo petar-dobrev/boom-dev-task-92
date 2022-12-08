@@ -44,8 +44,11 @@ export default class Card extends EventEmitter {
         price: this._price,
       });
       const notification = new Notification();
-      notification.render(this._type, this._price);
-      
+      const pizza = {
+        type: this._type,
+        price: this._price,
+      };
+      notification.render(pizza);
     });
   }
 }
