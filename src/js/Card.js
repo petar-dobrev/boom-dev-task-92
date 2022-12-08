@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import EventEmitter from "eventemitter3";
+import Notification from "./Notification";
 
 export default class Card extends EventEmitter {
   static get events() {
@@ -42,6 +43,9 @@ export default class Card extends EventEmitter {
         type: this._type,
         price: this._price,
       });
+      const notification = new Notification();
+      notification.render(this._type, this._price);
+      
     });
   }
 }
